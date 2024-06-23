@@ -1,0 +1,91 @@
+/* .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005bb5;
+  } */
+/* 
+  .days{
+    display: flex;
+  } */
+
+
+  .day.hour{
+
+    font-weight: 900;
+    font-size: 4em;
+    font-family: Arial, sans-serif;
+    color:rgb(182, 0, 0);
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .day.sec{
+
+    font-weight: 900;
+    font-size: 4em;
+    font-family: Arial, sans-serif;
+    color:rgb(182, 0, 0);
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media only screen and (min-width: 300px ) and (max-width: 768px ) {
+
+
+    .day.hour{
+      font-weight: 300;
+      font-size: 30px;
+      font-family: Arial, sans-serif;
+      color:rgb(182, 0, 0);
+    
+      padding: 5px;
+      position: relative;
+      z-index: 1;
+    }
+    .day.sec{
+  
+      font-weight: 300;
+      font-size: 30px;
+      font-family: Arial, sans-serif;
+      color:rgb(182, 0, 0);
+    
+      padding: 5px;
+      position: relative;
+      z-index: 1;
+    }
+
+  }
