@@ -21,6 +21,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import SnackbarContent from "@mui/material/SnackbarContent";
 import  {facebook,github,insta,twitter} from '../../../url.jsx';
 
+import Notify from "/src/app/notify";
 
 
 // import MyComponent from "./contact/mycomponent.jsx";
@@ -32,7 +33,7 @@ import datas, {
   french,
   spanish,
 } from "../../../array.jsx";
-import { open } from "fs";
+
 import { Alert, Link, Snackbar } from "@mui/material";
 
 export default function FormDialog() {
@@ -93,7 +94,7 @@ export default function FormDialog() {
 
   
 
-  const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleInputChange = (event) => {
     setInputValue(event.target.value);
     setFromemail(event.target.value);
 
@@ -104,9 +105,7 @@ export default function FormDialog() {
   // }
 
   // var one=language.title.charAt(0) < language.title.charAt(4) ;
-  const handleLanguageChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleLanguageChange = (event) => {
     setLang(event.target.value);
   };
 
@@ -149,7 +148,7 @@ export default function FormDialog() {
         </div>
 
         <video autoPlay muted loop data-aos="zoom-out">
-          <source src={"/video_11.mp4"} type="video/mp4" />
+          <source src={"/video_023.mp4"} type="video/mp4" />
         </video>
 
         <IntlProvider messages={language} locale="en" defaultLocale="en">
@@ -217,66 +216,17 @@ export default function FormDialog() {
           </div>
         </div>
       </div> */}
-      <IntlProvider messages={language} locale="en" defaultLocale="en">
-        <Dialog
-          data-aos="slide-up"
-          className="dialogs"
-          open={open}
-          onClose={handleClose}
-          PaperProps={{
-            component: "form",
-            onSubmit: (event: {
-              preventDefault: () => void;
-              currentTarget: HTMLFormElement | undefined;
-            }) => {
-              event.preventDefault();
-              const formData = new FormData(event.currentTarget);
-              const formJson = Object.fromEntries(formData.entries());
-              const email = formJson.email;
-              console.log(email);
-              handleClose();
-            },
-          }}
-        >
-          <div className="alert">
-            <DialogTitle className="subscribe">
-              <FormattedMessage id={language.subscribe} />
-            </DialogTitle>
-            <DialogContent className="dialog">
-              <DialogContentText className="dialog">
-                <FormattedMessage id={language.subscribeNote} />
-              </DialogContentText>
+      <Notify
+        open={open}
+        click={handleClose}
+        handleclick={handleClick}
+        inputchange={handleInputChange}
+        subscribe={language.subscribe}
+        notify={language.notify}
+        subnote={language.subscribeNote}
+        email={language.email}
 
-
-              <TextField
-                data-aos="fade"
-                className="dialogss"
-                autoFocus
-                required
-                margin="dense"
-                id="name"
-                name="email"
-                label={language.email}
-                type="email"
-                fullWidth
-                variant="standard"
-            
-                // value={email}
-                onChange={handleInputChange}
-               
-                // value={email}
-              />
-            </DialogContent>
-            <DialogActions className="dialogo" >
-              <Button onClick={handleClick}  variant="outlined" type="submit">
-                <FormattedMessage id={language.notify} />
-              </Button>
-
-              {/* <Button onClick={}>Open Snackbar</Button> */}
-            </DialogActions>
-          </div>
-        </Dialog>
-      </IntlProvider>
+      />
     </React.Fragment>
   );
 }

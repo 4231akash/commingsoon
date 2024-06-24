@@ -9,7 +9,8 @@ const data = {
     seconds:'seconds',
     subscribe:'Subscribe',
     subscribeNote:'To subscribe to this website, please enter your email address here. We will send updates occasionally.',
-    email:'Email Address'
+    email:'Email Address',
+    // img:
 
 
   },

@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.js", "src/app/page.jsx", "src/app/Templates/commingsoon_1/cs/page.jsx", "src/app/Templates/commingsoon_2/cs/page.jsx", "src/app/Templates/commingsoon_3/cs/page.jsx", "src/app/Templates/commingsoon_4/cs/page.jsx", "src/app/Templates/commingsoon_5/cs/page.jsx", "src/app/Templates/commingsoon_6/cs/page.jsx", "src/app/Templates/commingsoon_7/cs/page.jsx", "src/app/Templates/commingsoon_8/cs/page.jsx", "src/app/Templates/commingsoon_9/cs/page.jsx", "src/app/Templates/commingsoon_10/cs/page.jsx", "src/app/Templates/commingsoon_11/cs/page.jsx", "src/app/Templates/commingsoon_12/cs/page.jsx", "src/app/Templates/commingsoon_13/cs/page.jsx", "src/app/Templates/commingsoon_14/cs/page.jsx", "src/app/Templates/commingsoon_15/cs/page.jsx", "src/app/Templates/commingsoon_16/cs/page.jsx", "src/app/Templates/commingsoon_17/cs/page.jsx", "src/app/Templates/commingsoon_18/cs/page.jsx", "src/app/Templates/commingsoon_19/cs/page.jsx", "src/app/Templates/commingsoon_20/cs/page.jsx", "src/app/Templates/commingsoon_21/cs/page.jsx", "src/app/Templates/commingsoon_22/cs/page.jsx", "src/app/Templates/commingsoon_23/cs/page.jsx", "src/app/Templates/commingsoon_24/cs/page.jsx"],
   "exclude": ["node_modules"]
 }

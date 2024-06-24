@@ -5,6 +5,7 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 import Image from "next/image";
 import Countdown from "./contact/coundown.jsx";
 import "./global.css";
+import Notify from "./notify.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "@mui/material/Button";
@@ -19,8 +20,7 @@ import { FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { TiArrowSortedDown } from "react-icons/ti";
 import SnackbarContent from "@mui/material/SnackbarContent";
-import  {facebook,github,insta,twitter} from '../../../url.jsx';
-
+import { facebook, github, insta, twitter } from "./url.jsx";
 
 
 // import MyComponent from "./contact/mycomponent.jsx";
@@ -31,18 +31,17 @@ import datas, {
   chinese,
   french,
   spanish,
-} from "../../../array.jsx";
-import { open } from "fs";
+} from "./array.jsx";
+
 import { Alert, Link, Snackbar } from "@mui/material";
 
-export default function FormDialog() {
+export default function FormDialog(props) {
   const [open, setOpen] = useState(false);
-  const [opens, setOpens] = useState(false);
+  // const [opens, setOpens] = useState(false);
   const [lang, setLang] = useState("english");
   const [exist, setexist] = useState(true);
-  const [fromemail, setFromemail] = useState('');
-  const [inputValue, setInputValue] = useState('');
-  
+  const [fromemail, setFromemail] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   // var exist= true;
 
@@ -50,7 +49,7 @@ export default function FormDialog() {
     setOpen(true);
   };
   const handleClick = () => {
-    setOpens(true);
+    setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
@@ -91,22 +90,18 @@ export default function FormDialog() {
     language = datas.spanish;
   }
 
-  
-
-  const handleInputChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleInputChange = (event) => {
     setInputValue(event.target.value);
     setFromemail(event.target.value);
 
-    console.log("value "+ inputValue);
+    console.log("value " + inputValue);
   };
   // if(lang =='english'){
   //   language=datas.english;
   // }
 
   // var one=language.title.charAt(0) < language.title.charAt(4) ;
-  const handleLanguageChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleLanguageChange = (event) => {
     setLang(event.target.value);
   };
 
@@ -149,7 +144,7 @@ export default function FormDialog() {
         </div>
 
         <video autoPlay muted loop data-aos="zoom-out">
-          <source src={"/video_003.mp4"} type="video/mp4" />
+          <source src={"/background.mp4"} type="video/mp4" />
         </video>
 
         <IntlProvider messages={language} locale="en" defaultLocale="en">
@@ -189,18 +184,20 @@ export default function FormDialog() {
             </div>
 
             <div className="days" data-aos="fade-right">
-              <Link href={insta} target="_blank" rel="noopener noreferrer"><FaInstagram className="dayss" /></Link>
-              <Link href={twitter} target="_blank" rel="noopener noreferrer"> <FaTwitter className="dayss"  /></Link>
-              <Link href={github} target="_blank" rel="noopener noreferrer"><FaGithub className="dayss" /></Link>
-              <Link href={facebook} target="_blank" rel="noopener noreferrer"><ImFacebook2 className="dayss"/></Link>
-              
-
-              
-              
+              <Link href={insta} target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="dayss" />
+              </Link>
+              <Link href={twitter} target="_blank" rel="noopener noreferrer">
+                {" "}
+                <FaTwitter className="dayss" />
+              </Link>
+              <Link href={github} target="_blank" rel="noopener noreferrer">
+                <FaGithub className="dayss" />
+              </Link>
+              <Link href={facebook} target="_blank" rel="noopener noreferrer">
+                <ImFacebook2 className="dayss" />
+              </Link>
             </div>
-
-        
-     
           </div>
         </IntlProvider>
       </main>
@@ -217,7 +214,18 @@ export default function FormDialog() {
           </div>
         </div>
       </div> */}
-      <IntlProvider messages={language} locale="en" defaultLocale="en">
+      <Notify
+        open={open}
+        click={handleClose}
+        handleclick={handleClick}
+        inputchange={handleInputChange}
+        subscribe={language.subscribe}
+        notify={language.notify}
+        subnote={language.subscribeNote}
+        email={language.email}
+
+      />
+      {/* <IntlProvider messages={language} locale="en" defaultLocale="en">
         <Dialog
           data-aos="slide-up"
           className="dialogs"
@@ -270,13 +278,13 @@ export default function FormDialog() {
             <DialogActions className="dialogo" >
               <Button onClick={handleClick}  variant="outlined" type="submit">
                 <FormattedMessage id={language.notify} />
-              </Button>
+              </Button> */}
 
-              {/* <Button onClick={}>Open Snackbar</Button> */}
-            </DialogActions>
+      {/* <Button onClick={}>Open Snackbar</Button> */}
+      {/* </DialogActions>
           </div>
         </Dialog>
-      </IntlProvider>
+      </IntlProvider> */}
     </React.Fragment>
   );
 }

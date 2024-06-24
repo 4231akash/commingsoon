@@ -50,7 +50,7 @@ body {
   }
   .alert{
     width: 500px;
-    height: 500px;
+    /* height: 500px; */
     display: flex;
     /* gap: 30px; */
     background-color: black;
@@ -61,6 +61,10 @@ body {
   .dialogss{
     margin-top: 50px;
     background-color: white;
+    padding: 10px 10px 0px 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    border-bottom: none!important;
     /* border-bottom: #f4f4f4; */
     /* color: white; */
   }
@@ -93,7 +97,6 @@ body {
     border-radius: 30px;
     width: 150px;
   }
-
   h1 {
     font-weight: 900;
    
