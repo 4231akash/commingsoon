@@ -40,11 +40,7 @@ body {
     font-style: normal;
     font-size: 100px;
   }
-  .fill{
-    width: 70px;
-    background-color: black blur 5px;
-    border-radius: 10px;
-   }
+  
   .subflex{
     display: flex;
     justify-content: space-between;
@@ -228,7 +224,7 @@ body {
   }
   .input_field{
     display: flex;
-    gap: 60px;
+    gap: 30px;
     justify-content: center;
  
       z-index: 1;
@@ -520,7 +516,7 @@ body {
       border-radius: 30px;
 
   }
- 
+
   .dayss{
     padding-top: 50px;
     display: flex;
